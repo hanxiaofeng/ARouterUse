@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MVPArmsDemo.iml" filepath="$PROJECT_DIR$/MVPArmsDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ARouterUse.iml" filepath="$PROJECT_DIR$/ARouterUse.iml" />
       <module fileurl="file://$PROJECT_DIR$/arouterhomedemo/arouterhomedemo.iml" filepath="$PROJECT_DIR$/arouterhomedemo/arouterhomedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/loginmodule/loginmodule.iml" filepath="$PROJECT_DIR$/loginmodule/loginmodule.iml" />
