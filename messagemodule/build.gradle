@@ -35,7 +35,7 @@ android {
         }
     }
 
-    sourceSets {
+    /*sourceSets {
         main {
             if (!rootProject.ext.isMouleDebugMessage) {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -46,7 +46,7 @@ android {
                 java.srcDir 'src/main/java/'
             }
         }
-    }
+    }*/
 }
 
 dependencies {
