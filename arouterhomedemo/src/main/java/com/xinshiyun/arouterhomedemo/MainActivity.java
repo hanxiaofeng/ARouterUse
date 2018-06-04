@@ -1,9 +1,10 @@
 package com.xinshiyun.arouterhomedemo;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -11,13 +12,18 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.xinshiyun.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+
+    private static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        activity = this;
 
         jumpActivityTest();
     }
@@ -86,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void jumpBrowse(String url) {
+        Intent intent = new Intent();
+        intent.setData(Uri.parse(url));//Url 就是你要打开的网址
+        intent.setAction(Intent.ACTION_VIEW);
+        this.startActivity(intent); //启动浏览器
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -94,5 +107,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "onActivityResult：" + resultData, Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public static Activity getThis() {
+        return activity;
     }
 }

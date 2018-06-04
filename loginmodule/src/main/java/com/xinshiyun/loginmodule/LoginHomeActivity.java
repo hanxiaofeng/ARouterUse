@@ -1,13 +1,15 @@
 package com.xinshiyun.loginmodule;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.xinshiyun.base.BaseActivity;
 
-@Route(path = "/login/login",group = "login")
+@Route(path = "/login/login", group = "login")
 public class LoginHomeActivity extends BaseActivity {
 
     @Override
@@ -33,5 +35,11 @@ public class LoginHomeActivity extends BaseActivity {
                         .navigation();
             }
         });
+
+        ((TextView) findViewById(R.id.tv_show_extra)).setText("I am " + LoginHomeActivity.class.getName());
+        String extra = getIntent().getStringExtra("extra");
+        if (!TextUtils.isEmpty(extra)) {
+            ((TextView) findViewById(R.id.tv_show_extra)).setText(extra);
+        }
     }
 }

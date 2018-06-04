@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xinshiyun.arouterhomedemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -31,7 +33,20 @@
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
-        <activity android:name=".JumpUrlActivity"></activity>
+        <activity android:name=".JumpUrlActivity">
+            <intent-filter>
+                <data
+                    android:host="wangkeke"
+                    android:scheme="arouter" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".UrlShowActivity"></activity>
     </application>
 
 </manifest>
