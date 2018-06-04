@@ -36,6 +36,12 @@
         android:layout_marginTop="20dp"
         android:text="跳转外部loginModule -Activity+拦截器" />
 
+    <Button
+        android:id="@+id/btn_webview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="跳转webviewActivity" />
 
 
 </LinearLayout>

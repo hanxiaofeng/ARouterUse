@@ -90,6 +90,15 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        findViewById(R.id.btn_webview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ARouter.getInstance().build("/web/webviewActivity")
+                        .navigation();
+            }
+        });
+
     }
 
     public void jumpBrowse(String url) {
