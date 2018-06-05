@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.xinshiyun.arouterhomedemo.service.HelloService;
 import com.xinshiyun.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
@@ -85,7 +86,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
 
-                ARouter.getInstance().build("/login/login","login")
+                ARouter.getInstance().build("/login/login", "login")
                         .navigation();
             }
         });
@@ -96,6 +97,14 @@ public class MainActivity extends BaseActivity {
 
                 ARouter.getInstance().build("/web/webviewActivity")
                         .navigation();
+            }
+        });
+
+        findViewById(R.id.btn_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ((HelloService) ARouter.getInstance().build("/service/saySomething").navigation()).saySomething("我是service接口");
+                ARouter.getInstance().navigation(HelloService.class).saySomething("我是service接口");
             }
         });
 
